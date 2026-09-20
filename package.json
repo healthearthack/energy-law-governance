@@ -1,0 +1,14 @@
+{
+  "name": "energy-law-governance",
+  "version": "2.4.0",
+  "description": "TypeScript contracts for Energy Law, IRA 30D/45X, and EU CRMA Compliance",
+  "main": "dist/legal_schema.js",
+  "types": "dist/legal_schema.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "license": "MIT"
+}

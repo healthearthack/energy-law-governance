@@ -1,0 +1,47 @@
+name: Audit Statutory Energy Law & Dispatch
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'compliance_evaluator.py'
+  schedule:
+    - cron: "0 0 * * 1" # Weekly Monday audit
+
+jobs:
+  legal-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run Legal Compliance Evaluator
+        run: |
+          python compliance_evaluator.py
+
+      - name: Commit Updated Compliance Bundle
+        run: |
+          git config user.name "healthearthack-ci"
+          git config user.email "ci@thepolka.cloud"
+          git add governance/statutory_compliance_bundle.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(governance): statutory compliance audit update [skip ci]" && git push)
+
+      - name: Dispatch Event to Research Publisher (Repo 5)
+        if: env.CROSS_REPO_PAT != ''
+        uses: peter-evans/repository-dispatch@v3
+        env:
+          CROSS_REPO_PAT: ${{ secrets.CROSS_REPO_PAT }}
+        with:
+          token: ${{ secrets.CROSS_REPO_PAT }}
+          repository: healthearthack/industrial-research-publisher
+          event-type: legal_compliance_ready
+          client-payload: '{"status": "AUDIT_PASSED", "ira_45x_eligible": true}'

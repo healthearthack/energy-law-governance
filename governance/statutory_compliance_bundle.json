@@ -1,0 +1,38 @@
+{
+  "audit_title": "Enterprise Statutory Compliance & Critical Minerals Due Diligence Report",
+  "auditor": "healthearthack Legal Governance Engine",
+  "timestamp_utc": "2026-09-20T06:41:34.451533+00:00",
+  "corporate_diligence_summary": {
+    "overall_bankability_status": "INVESTMENT_GRADE_BANKABLE",
+    "statutory_tax_credit_annual_usd": 4424532.0,
+    "permitting_pathway": "CLASS_V_SUBSURFACE_GEOTHERMAL_EXTRACTION",
+    "global_export_eligibility": "US_EU_BILATERAL_QUALIFIED"
+  },
+  "united_states_ira": {
+    "statute": "United States Public Law 117-169 (Inflation Reduction Act)",
+    "section_30d_clean_vehicle_qualified": true,
+    "domestic_extraction_processing_pct": 100.0,
+    "section_45x_production_credit_eligible": true,
+    "annual_production_cost_usd": 44245320.0,
+    "estimated_annual_45x_tax_credit_usd": 4424532.0,
+    "foreign_entity_of_concern_feoc_status": "COMPLIANT_ZERO_FEOC_INVOLVEMENT"
+  },
+  "european_union_crma": {
+    "regulation": "Regulation (EU) 2024/1252 (Critical Raw Materials Act)",
+    "battery_passport_ready": true,
+    "iso_14044_lca_verified": true,
+    "lifecycle_emissions_rating": "NET_NEGATIVE_A_PLUS",
+    "third_country_dependency_risk_index": 0.04,
+    "human_rights_due_diligence": "OECD_DUE_DILIGENCE_ALIGNED"
+  },
+  "epa_underground_injection_control": {
+    "statutory_authority": "EPA Safe Drinking Water Act Title 40 CFR Parts 144-148",
+    "existing_wellbore_classification": "CLASS_II_OILFIELD_BRINE_DISPOSAL",
+    "target_classification": "CLASS_V_SUBSURFACE_GEOTHERMAL_EXTRACTION",
+    "state_primacy_agency": "Arkansas Oil and Gas Commission (AOGC) & ADEQ",
+    "permitting_cycle_savings_months": 18.0,
+    "capex_savings_vs_greenfield_usd": 6700000.0,
+    "area_of_review_aor_radius_miles": 0.5,
+    "mechanical_integrity_test_mit_passed": true
+  }
+}
